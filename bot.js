@@ -13,13 +13,9 @@ const app = express();
 app.use(express.json());
 
 // ===============================
-// CONFIG
+// CONFIG (ALL FROM ENV)
 // ===============================
-
-// HARD‑CODED TOKEN — REPLACE THIS
-const TOKEN = "MTQwODc0OTg5NDE5MzM4MTQxOA.Gyx_G5.ajKkDDhW9XqEu6lYl1Wpfy-gcpyRRFlTJR1KHA";
-
-// ENV VALUES FOR THE REST
+const TOKEN = process.env.DISCORD_TOKEN;   // ✔ no hard-coded token
 const CHANNEL_ID = process.env.CHANNEL_ID;
 const API_URL = process.env.API_URL;
 const API_KEY = process.env.API_KEY;
@@ -106,10 +102,10 @@ client.on("interactionCreate", async interaction => {
 });
 
 // ===============================
-// START SERVER
+// START SERVER (RENDER PORT)
 // ===============================
-app.listen(process.env.PORT || 4000, () => {
-    console.log("Bot HTTP server running");
+app.listen(process.env.PORT, () => {
+    console.log("Bot HTTP server running on port " + process.env.PORT);
 });
 
 // ===============================
