@@ -13,9 +13,9 @@ const app = express();
 app.use(express.json());
 
 // ===============================
-// CONFIG (ALL FROM ENV)
+// CONFIG (TOKEN HARDCODED)
 // ===============================
-const TOKEN = process.env.DISCORD_TOKEN;   // ✔ no hard-coded token
+const TOKEN = "MTQwODc0OTg5NDE5MzM4MTQxOA.Gyx_G5.ajKkDDhW9XqEu6lYl1Wpfy-gcpyRRFlTJR1KHA";
 const CHANNEL_ID = process.env.CHANNEL_ID;
 const API_URL = process.env.API_URL;
 const API_KEY = process.env.API_KEY;
